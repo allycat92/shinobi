@@ -26,11 +26,11 @@
   "packs": [
     {
       "label": "Chat Macro", 
-      "type": "Macro",
       "name": "chat-macro",
       "path": "/packs/chat-macro.db",
-      "system": "shinobigami"
+      "system": "shinobigami",
       "entity": "Macro",
+      "type": "Macro",
     },
     {
       "label": "Create Macro",
