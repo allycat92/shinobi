@@ -1,0 +1,73 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header flexrow">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+    <div class="header-fields">
+        <h1 class="charname"><input name="name" type="text" value="{{item.name}}" ></h1>
+    </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="description">{{localize "Shinobigami.Description"}}</a>
+    {{#if owner}}
+    <a class="item" data-tab="visible">{{localize "Shinobigami.Visible" }}</a>
+    {{/if}}
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    {{!-- Description Tab --}}
+    <div class="tab" data-group="primary" data-tab="description">
+
+      <div class="sheet-item margin-top-10">
+        <div class="sheet-wrapper">
+          <section class="sheet-attributes">
+            <div class="cell cell--4">
+              <label class="cell--title">{{localize "Shinobigami.Type"}}</label>
+            </div>
+
+            <div class="cell cell--4">
+              <input type="text" name="system.type" value="{{system.type}}"/>
+            </div>
+
+            <div class="cell cell--4 select-talent">
+              <label class="cell--title">
+                {{localize "Shinobigami.Talent"}}
+                <i class="fas fa-table"></i>
+              </label>
+            </div>
+
+            <div class="cell cell--4">
+              <input type="text" name="system.talent" value="{{system.talent}}" data-dtype="String"/>
+            </div>
+
+          </section>
+
+          <div class="cell--bio">
+            <h3 class="cell--title"><b>{{localize "Shinobigami.Description"}}</b></h3>
+            {{editor enrichedBiography target="system.description" button=true editable=editable }}
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    {{!-- Description Tab --}}
+    <div class="tab" data-group="primary" data-tab="visible">
+      <table>
+        <tr>
+          <th>USER</th>
+          <th>{{localize "Shinobigami.Visible" }}</th>
+        </tr>
+        {{#each users}}
+        <tr>
+          <td>{{name}}</td>
+          <td><input type="checkbox" name="system.visible.{{id}}" data-dtype="Boolean" {{#if (checkVisible ../system.visible id)}} checked {{/if}}/></td>
+        </tr>
+        {{/each}}
+      </table>
+    </div>
+
+
+  </section>
+</form>
