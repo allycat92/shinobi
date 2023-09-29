@@ -45,7 +45,7 @@
   "socket": true,
   "primaryTokenAttribute": "health",
   "url": "https://github.com/ksx0330/FVTT-Shinobigami-System",
-  "manifest": "https://raw.githubusercontent.com/ksx0330/FVTT-Shinobigami-System/master/system.json",
+  "manifest": "https://raw.githubusercontent.com/allycat92/shinobi/master/system.json",
   "download": "https://codeload.github.com/ksx0330/FVTT-Shinobigami-System/zip/master",
   "license": "LICENSE.txt"
 }
